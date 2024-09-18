@@ -1,14 +1,9 @@
-import { ThemeIcon, Progress, Text, Group, Badge, Paper, rem } from '@mantine/core';
-import { IconSwimming } from '@tabler/icons-react';
+import { Progress, Text, Group, Badge, Paper } from '@mantine/core';
 import classes from './PassBreach.module.css';
 
 export default function PasswordBreachedComponent() {
   return (
-    <Paper radius="md" withBorder className={classes.card} mt={20}>
-      <ThemeIcon className={classes.icon} size={60} radius={60}>
-        <IconSwimming style={{ width: rem(32), height: rem(32) }} stroke={1.5} />
-      </ThemeIcon>
-
+    <Paper radius="md" p={'md'} withBorder className={classes.card} mt={20}>
       <Text ta="center" fw={700} className={classes.title}>
         Swimming challenge
       </Text>

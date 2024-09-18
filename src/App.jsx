@@ -8,6 +8,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 // Import the pages you are using
 import CheckPassHash from "./pages/CheckPassHash";
 import { MainContextProvider } from "./contexts/MainContext";
+import Breaches from "./pages/Breaches";
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/check-pass" element={<CheckPassHash />} />
+            <Route path="/breaches" element={<Breaches />} />
           </Routes>
         </BrowserRouter>
       </MantineProvider>

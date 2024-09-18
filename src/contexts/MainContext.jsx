@@ -2,7 +2,7 @@ import { createContext, useState } from "react";
 
 export const MainContext = createContext();
 const initialState = {
-  state: "idle",
+  status: "idle",
   data: null,
   error: null,
 };
