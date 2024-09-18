@@ -4,10 +4,12 @@ import { Dialog, DialogPanel } from '@headlessui/react'
 // import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
 const navigation = [
-  { name: 'Breach Analytics', href: '#' },
-  { name: 'Data Breaches', href: '#' },
-  { name: 'Domain Breaches', href: '#' },
-  { name: 'Exposed Passwords', href: '#' },
+  { name: 'Email Breaches', href: '/email-breaches' },
+
+  { name: 'Breach Analytics', href: '' },
+  { name: 'Data Breaches', href: '/breaches' },
+  { name: 'Domain Breach', href: '/check-pass' },
+
 ]
 export default function Example() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)

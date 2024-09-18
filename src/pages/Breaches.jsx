@@ -1,10 +1,11 @@
 import cx from "clsx";
 import { useState, useEffect, useContext } from "react";
 import { Table, ScrollArea, Stack, Center, Loader, Alert } from "@mantine/core";
-import classes from "./TableScrollArea.:module.css";
+import classes from "./TableScrollArea.module.css";
 
 import { MainContext } from "../contexts/MainContext";
 import { fetchBreaches } from "../data/DataBreaches";
+import { IconInfoCircle } from "@tabler/icons-react/dist/esm/tabler-icons-react";
 
 export default function Breaches() {
   const { state, setState } = useContext(MainContext);
@@ -28,29 +29,31 @@ export default function Breaches() {
 
   const [scrolled, setScrolled] = useState(false);
 
-  const rows = state.data?.map((row) => (
-    <Table.Tr key={row.breachID}>
-      <Table.Td>{row.breachID}</Table.Td>
-      <Table.Td>{row.breachedDate}</Table.Td>
-      <Table.Td>{row.domain}</Table.Td>
-      <Table.Td>{row.exposedRecords}</Table.Td>
-      <Table.Td>{row.exposureDescription}</Table.Td>
-      <Table.Td>{row.industry}</Table.Td>
-      <Table.Td>{row.passwordRisk}</Table.Td>
-    </Table.Tr>
-  )) || [];
+  const rows =
+    state.data?.map((row) => (
+      <Table.Tr key={row.breachID}>
+        <Table.Td>{row.breachID}</Table.Td>
+        <Table.Td>{row.breachedDate}</Table.Td>
+        <Table.Td>{row.domain}</Table.Td>
+        <Table.Td>{row.exposedRecords}</Table.Td>
+        <Table.Td>{row.exposureDescription}</Table.Td>
+        <Table.Td>{row.industry}</Table.Td>
+        <Table.Td>{row.passwordRisk}</Table.Td>
+      </Table.Tr>
+    )) || [];
 
+  const icon = <IconInfoCircle />;
   return (
     <Center p={"md"}>
       <Stack>
         {state.status === "loading" && (
-          <Center h={100} bg="var(--mantine-color-gray-light)">
+          <Center w={300} h={100} bg="var(--mantine-color-gray-light)">
             <Loader type="bars" />
           </Center>
         )}
         {state.status === "error" && (
-          <Alert color="red" title="Error" radius="md">
-            {state.error}
+          <Alert variant="light" color="red" title="Not Found" icon={icon}>
+            The suggested breach not found please, maybe API limit exceeded.
           </Alert>
         )}
         {state.status === "finished" && (
@@ -80,4 +83,3 @@ export default function Breaches() {
     </Center>
   );
 }
-

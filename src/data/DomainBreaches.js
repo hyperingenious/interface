@@ -1,7 +1,7 @@
 import axios from "axios";
 
 
-  async function fetchData() {
+ export async function fetchData() {
     try {
       const response = await axios.post(
         `https://api.xposedornot.com/v1/domain-breaches/`,
