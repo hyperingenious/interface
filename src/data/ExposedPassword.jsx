@@ -1,9 +1,9 @@
 import axios from "axios";
 
-export async function fetchData(email) {
+export async function fetchData(password) {
   try {
     const response = await axios.get(
-      `https://api.xposedornot.com/v1/breach-analytics?email=${email}`
+      `https://passwords.xposedornot.com/v1/pass/anon/${password}`
     );
     const data = response.data;
     return data;

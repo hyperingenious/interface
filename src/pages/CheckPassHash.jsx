@@ -1,11 +1,20 @@
-import { Button, Center, Input, Loader, Stack, Title } from "@mantine/core";
+import {
+  Alert,
+  Button,
+  Center,
+  Input,
+  Loader,
+  Stack,
+  Title,
+} from "@mantine/core";
 import { useContext, useState } from "react";
 import { MainContext } from "../contexts/MainContext";
-import PasswordBreachedComponent from "./PassBreachedComponent";
 import { fetchData } from "../data/ExposedPassword";
+import { IconInfoCircle } from "@tabler/icons-react/dist/esm/tabler-icons-react";
 
 export default function CheckPassHash() {
   const { state, setState } = useContext(MainContext);
+  const icon = <IconInfoCircle />;
 
   const [pass, setPass] = useState("");
 
@@ -13,7 +22,10 @@ export default function CheckPassHash() {
     try {
       setState({ ...state, status: "loading" });
       const data = await fetchData(pass);
-      console.log(data)
+      if (data == null) {
+        setState({ ...state, status: "error" });
+        return;
+      }
       setState({ ...state, data, status: "finished" });
     } catch (e) {
       setState({ ...state, status: "error", error: "Breach not Found!" });
@@ -53,7 +65,11 @@ export default function CheckPassHash() {
             <Loader type="bars" />
           </Center>
         )}
-        <PasswordBreachedComponent />
+        {state.status == "error" && (
+          <Alert variant="light" color="red" title="Not Found" icon={icon}>
+            The suggested breach not found please, maybe API limit exceeded.
+          </Alert>
+        )}
       </Stack>
     </Center>
   );
