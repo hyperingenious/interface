@@ -1,5 +1,5 @@
 import axios from "axios";  
-  async function fetchData() {
+  export async function fetchData() {
     try {
       const response = await axios.get(
         `https://api.xposedornot.com/v1/breaches`

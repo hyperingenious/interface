@@ -10,6 +10,7 @@ import CheckPassHash from "./pages/CheckPassHash";
 import { MainContextProvider } from "./contexts/MainContext";
 // import CheckAllBreaches from "./pages/CheckAllBreaches";
 import Home from "./pages/Home";
+import EmailCheck from "./pages/EmailCheck";
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
         <BrowserRouter>
           <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/email-breaches" element={<EmailCheck />} />
 
             <Route path="/check-pass" element={<CheckPassHash />} />
           </Routes>

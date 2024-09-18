@@ -1,9 +1,5 @@
 import axios from 'axios';
-
-export default function BreachAnalytics(email) {
- 
-
-  async function fetchData(email) {
+ export async function fetchData(email) {
     try {
       const response = await axios.get(`https://api.xposedornot.com/v1/breach-analytics?email=${email}`);
       const data = response.data
@@ -14,4 +10,3 @@ export default function BreachAnalytics(email) {
     }
   }
 
-}
