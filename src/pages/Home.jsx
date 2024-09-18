@@ -6,7 +6,7 @@ import { Dialog, DialogPanel } from '@headlessui/react'
 const navigation = [
   { name: 'Email Breaches', href: '/email-breaches' },
 
-  { name: 'Breach Analytics', href: '#' },
+  { name: 'Breach Analytics', href: '/breach-analytics' },
   { name: 'Data Breaches', href: '#' },
   { name: 'Domain Breaches', href: '#' },
 ]

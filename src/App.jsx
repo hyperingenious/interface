@@ -11,6 +11,7 @@ import { MainContextProvider } from "./contexts/MainContext";
 // import CheckAllBreaches from "./pages/CheckAllBreaches";
 import Home from "./pages/Home";
 import EmailCheck from "./pages/EmailCheck";
+import BreachAnalyticsPage from "./pages/BreachAnalyticsPage";
 
 export default function App() {
   return (
@@ -20,6 +21,7 @@ export default function App() {
           <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/email-breaches" element={<EmailCheck />} />
+          <Route path="/breach-analytics" element={<BreachAnalyticsPage />} />
 
             <Route path="/check-pass" element={<CheckPassHash />} />
           </Routes>
