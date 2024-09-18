@@ -10,7 +10,10 @@ import CheckPassHash from "./pages/CheckPassHash";
 import { MainContextProvider } from "./contexts/MainContext";
 import Breaches from "./pages/Breaches";
 import Home from "./pages/Home";
+import Domain from "./pages/Domain";
+
 import EmailCheck from "./pages/EmailCheck";
+import BreachAnalyticsPage from "./pages/BreachAnalyticsPage";
 
 export default function App() {
   return (
@@ -18,12 +21,14 @@ export default function App() {
       <MantineProvider>
         <BrowserRouter>
           <Routes>
-          <Route path="/" element={<Home />} />
+            <Route path="/" element={<Home />} />
 
-          <Route path="/email-breaches" element={<EmailCheck />} />
+            <Route path="/email-breaches" element={<EmailCheck />} />
+            <Route path="/breach-analytics" element={<BreachAnalyticsPage />} />
 
             <Route path="/check-pass" element={<CheckPassHash />} />
             <Route path="/breaches" element={<Breaches />} />
+            <Route path="/domain-breach" element={<Domain/>} />
           </Routes>
         </BrowserRouter>
       </MantineProvider>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { fetchData } from '../data/EmailBreachCheck'; // Adjust the path according to your file structure
+import { fetchData } from '../data/EmailBreachCheck'; 
 
 export default function EmailCheck() {
   const [email, setEmail] = useState('');
