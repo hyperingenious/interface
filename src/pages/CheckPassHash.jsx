@@ -6,6 +6,7 @@ export default function CheckPassHash() {
   const {state, data, error} = useContext(MainContext)
   return (
     <Center p={"md"}>
+      <h1 className="text-pink-900">lksjdlfjldsf</h1>
       <Stack>
         <Title order={1}>Check Password Breaches</Title>
         <Input.Wrapper

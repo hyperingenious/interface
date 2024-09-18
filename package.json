@@ -9,15 +9,11 @@
     "lint": "eslint .",
     "preview": "vite preview"
   },
-  
   "dependencies": {
     "@mantine/core": "^7.12.2",
     "@mantine/hooks": "^7.12.2",
-<<<<<<< HEAD
-    "@mantinex/dev-icons": "^1.0.2",
-=======
+    "@tabler/icons-react": "^3.17.0",
     "axios": "^1.7.7",
->>>>>>> 9c3bbb7 (added all endpoints)
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.26.2"
@@ -27,6 +23,7 @@
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.3.1",
+    "autoprefixer": "^10.4.20",
     "eslint": "^9.9.0",
     "eslint-plugin-react": "^7.35.0",
     "eslint-plugin-react-hooks": "^5.1.0-rc.0",
@@ -35,6 +32,7 @@
     "postcss": "^8.4.47",
     "postcss-preset-mantine": "^1.17.0",
     "postcss-simple-vars": "^7.0.1",
+    "tailwindcss": "^3.4.12",
     "vite": "^5.4.1"
   }
 }
