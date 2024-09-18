@@ -1,7 +1,7 @@
 import cx from "clsx";
 import { useState, useEffect, useContext } from "react";
 import { Table, ScrollArea, Stack, Center, Loader, Alert } from "@mantine/core";
-import classes from "./TableScrollArea.module.css";
+import classes from "./TableScrollArea.:module.css";
 
 import { MainContext } from "../contexts/MainContext";
 import { fetchBreaches } from "../data/DataBreaches";
